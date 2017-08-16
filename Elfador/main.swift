@@ -9,6 +9,6 @@
 import Foundation
 
 let elfer = Elfer()
-for _ in 0...10 {
+for _ in 0..<10 {
     print(elfer.getPalabra())
 }
