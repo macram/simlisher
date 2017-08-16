@@ -8,5 +8,7 @@
 
 import Foundation
 
-print("Hello, World!")
-
+let elfer = Elfer()
+for _ in 0...10 {
+    print(elfer.getPalabra())
+}
