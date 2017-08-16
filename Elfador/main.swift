@@ -19,8 +19,15 @@ while texto.count < maxLength {
     if palabrasParaEstaFrase == 0 {
         palabrasParaEstaFrase = Int(arc4random_uniform(4) + 2)
     }
+    var palabra = elfer.getPalabra(maxLength: maxLength-texto.count)
+    
+    if palabrasEnFrase == 0 {
+        palabra = palabra.capitalized
+    }
+    
+    texto += palabra
     palabrasEnFrase += 1
-    texto += elfer.getPalabra(maxLength: maxLength-texto.count)
+    
     
     if palabrasEnFrase >= palabrasParaEstaFrase {
         palabrasParaEstaFrase = 0

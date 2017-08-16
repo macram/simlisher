@@ -9,11 +9,11 @@
 import Foundation
 
 class Elfer {
-    let vocales = ["a", "e", "i", "o", "u", "a", "e", "i", "o", "u", "a", "e", "i", "o", "u", "á", "à", "é", "è", "ú", "ù", "â", "ê", "ô"]
-    let vocalesTildadas = ["á", "à", "é", "è", "ú", "ù", "â", "ê", "ô"]
+    let vocales = ["a", "e", "i", "o", "u", "a", "e", "i", "o", "u", "a", "e", "i", "o", "u", "á", "à", "é", "è", "ú", "ù", "â", "ê", "ô", "ø", "å", "œ"]
+    let vocalesTildadas = ["á", "à", "é", "è", "ú", "ù", "â", "ê", "ô", "ø", "å", "œ"]
     let diptongos = ["ui", "iu", "ai", "ei", "oi", "au", "eu", "ou", "io"]
     let consonantesFinales = ["s", "r", "n", "n"]
-    let consonantes = ["b", "c", "c", "c", "d", "d", "f", "g", "j", "l", "m", "m", "n", "n", "p", "r", "s", "r", "s", "t", "v", "w", "x", "z"]
+    let consonantes = ["b", "c", "c", "c", "d", "d", "f", "f", "f", "g", "g", "j", "l", "l", "l", "m", "m", "n", "n", "p", "r", "s", "r", "s", "t", "r", "s", "t", "v", "v", "w", "x", "z", "ß"]
     let combinacionesConsonantes = ["br", "cr", "fr", "gr", "pr", "tr", "bl", "cl", "fl", "gl", "pl"]
     let consonantesRaras = ["w", "x", "z"]
     
