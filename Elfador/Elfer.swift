@@ -9,10 +9,11 @@
 import Foundation
 
 class Elfer {
-    let vocales = ["a", "e", "i", "o", "u", "á", "à", "é", "è", "ú", "ù", "â", "ê", "ô"]
+    let vocales = ["a", "e", "i", "o", "u", "a", "e", "i", "o", "u", "a", "e", "i", "o", "u", "á", "à", "é", "è", "ú", "ù", "â", "ê", "ô"]
+    let vocalesTildadas = ["á", "à", "é", "è", "ú", "ù", "â", "ê", "ô"]
     let diptongos = ["ui", "iu", "ai", "ei", "oi", "au", "eu", "ou", "io"]
-    let consonantesFinales = ["s", "r", "n"]
-    let consonantes = ["b", "c", "d", "f", "g", "j", "l", "m", "n", "p", "r", "s", "t", "v", "w", "x", "z"]
+    let consonantesFinales = ["s", "r", "n", "n"]
+    let consonantes = ["b", "c", "c", "c", "d", "d", "f", "g", "j", "l", "m", "m", "n", "n", "p", "r", "s", "r", "s", "t", "v", "w", "x", "z"]
     let combinacionesConsonantes = ["br", "cr", "fr", "gr", "pr", "tr", "bl", "cl", "fl", "gl", "pl"]
     let consonantesRaras = ["w", "x", "z"]
     
@@ -37,10 +38,10 @@ class Elfer {
             switch(estado) {
             case .Vocal:
                 silaba += getLetra(strings: vocales)
-                let sig = Int(arc4random_uniform(2))
+                let sig = Int(arc4random_uniform(4))
                 switch(sig) {
-                case 0: estado = Estados.DeVocalAConsonante
-                default: estado = Estados.FinalSilaba
+                case 0: estado = Estados.FinalSilaba
+                default: estado = Estados.DeVocalAConsonante
                 }
             case .DeVocalAConsonante:
                 silaba += getLetra(strings: consonantesFinales)
@@ -68,7 +69,7 @@ class Elfer {
         return silaba
     }
     
-    func getPalabra() -> String {
+    func getPalabra(maxLength: Int = Int.max) -> String {
         var sirve = false
         var palabra = ""
         
@@ -80,15 +81,20 @@ class Elfer {
             }
             
             var countRaras = 0
+            var tildadas = 0
             
             for i in 0..<palabra.count {
                 if consonantesRaras.contains(palabra[i]) {
                     countRaras += 1
                 }
+                if vocalesTildadas.contains(palabra[i]) {
+                    tildadas += 1
+                }
             }
-            if countRaras <= 1 {
+            if countRaras <= 1 && tildadas < 3 && palabra.count <= maxLength {
                 sirve = true
             }
+            
         }
         
         return palabra
