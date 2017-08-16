@@ -8,18 +8,18 @@
 
 import Foundation
 
-let elfer = Elfer()
+let simlisher = Simlisher()
 
-let maxLength = 1000
+let maxLength = 500
 var texto = ""
 var palabrasEnFrase = 0
 var palabrasParaEstaFrase = 0
 
-while texto.count < maxLength {
+while texto.count < maxLength - 4 {
     if palabrasParaEstaFrase == 0 {
         palabrasParaEstaFrase = Int(arc4random_uniform(4) + 2)
     }
-    var palabra = elfer.getPalabra(maxLength: maxLength-texto.count)
+    var palabra = simlisher.getPalabra(maxLength: maxLength-texto.count)
     
     if palabrasEnFrase == 0 {
         palabra = palabra.capitalized
@@ -39,6 +39,6 @@ while texto.count < maxLength {
     }
 }
 
-texto += "flarlarLÂR. "
+texto += "FlarlarLÂR. "
 
 print(texto)
