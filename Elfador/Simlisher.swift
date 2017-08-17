@@ -1,6 +1,6 @@
 //
-//  Elfer.swift
-//  Elfador
+//  Simlisher.swift
+//  Simlisher
 //
 //  Created by Manu Mateos on 16/8/17.
 //  Copyright © 2017 Liquid Squad. All rights reserved.
@@ -14,9 +14,8 @@ class Simlisher {
     let diptongos = ["ui", "iu", "ai", "ei", "oi", "au", "eu", "ou", "io"]
     let consonantesFinales = ["s", "r", "n", "n"]
     let consonantes = ["b", "c", "c", "c", "d", "d", "f", "f", "f", "g", "g", "j", "l", "l", "l", "m", "m", "n", "n", "p", "r", "s", "r", "s", "t", "r", "s", "t", "v", "v", "w", "x", "z", "ß"]
-    let combinacionesConsonantes = ["br", "cr", "fr", "gr", "pr", "tr", "bl", "cl", "fl", "gl", "pl"]
-    let consonantesRaras = ["v", "w", "x", "z"]
-    
+    let combinacionesConsonantes = ["br", "cr", "fr", "gr", "pr", "tr", "bl", "cl", "ﬂ", "gl", "pl"]
+    let consonantesRaras = ["ß", "v", "w", "x", "z"]
     let maxIntentos = 5
     
     enum Estados {
